@@ -52,6 +52,28 @@ This project is fully customizable and perfect for integrating any AI service li
 ├── README.md             # Project documentation
 └── .gitignore            # Ignored files and folders
 ```
+```
+📂 Project Structure
+├── backend
+│   ├── index.js          # Main backend server file
+│   ├── routes/           # API routes
+│   ├── controllers/      # Logic for handling requests
+│   ├── models/           # Data models (if applicable)
+│   ├── .env              # Environment variables
+│   └── package.json      # Backend dependencies
+│
+├── frontend
+│   ├── src/
+│   │   ├── components/   # React components
+│   │   ├── pages/        # Page components
+│   │   ├── App.js        # Main React app file
+│   │   ├── index.js      # React entry point
+│   └── package.json      # Frontend dependencies
+│
+├── assets/               # Images, GIFs, and other assets
+├── README.md             # Project documentation
+└── .gitignore            # Ignored files and folders
+```
 
 ---
 
@@ -81,6 +103,11 @@ cd your-repo-name
 ### 3. Set up the Backend
 
 ```bash
+```
+
+### 3. Set up the Backend
+
+```bash
 cd backend
 npm install
 ```
@@ -88,7 +115,13 @@ npm install
 #### (Optional) Create Environment Variables
 
 If you're using an external AI API, create a `.env` file inside the `backend` directory:
+```
 
+#### (Optional) Create Environment Variables
+
+If you're using an external AI API, create a `.env` file inside the `backend` directory:
+
+```ini
 ```ini
 API_KEY=your_ai_api_key
 ```
@@ -96,7 +129,14 @@ API_KEY=your_ai_api_key
 Start the backend server:
 
 ```bash
+```bash
 npm start
+```
+
+Your backend will be running at: `http://localhost:5000`
+
+### 4. Set up the Frontend
+
 ```
 
 Your backend will be running at: `http://localhost:5000`
@@ -106,9 +146,17 @@ Your backend will be running at: `http://localhost:5000`
 Open a new terminal tab:
 
 ```bash
+```bash
 cd frontend
 npm install
 npm start
+```
+
+Your frontend will be running at: `http://localhost:3000`
+
+### 5. Start Chatting 🎉
+
+Visit: `http://localhost:3000`  
 ```
 
 Your frontend will be running at: `http://localhost:3000`
@@ -122,11 +170,22 @@ Your AI Assistant is ready to chat!
 
 ## 🔑 API Key Setup
 
+---
+
+## 🔑 API Key Setup
+
 If you're using a service like OpenAI or Google Gemini:
 
 1. Get your API key from the service provider.
 2. Add it to your `.env` file in the `backend` directory:
+1. Get your API key from the service provider.
+2. Add it to your `.env` file in the `backend` directory:
 
+    ```ini
+    API_KEY=your_api_key_here
+    ```
+
+3. In your `backend/index.js`, make sure the API is connected properly. Example for OpenAI:
     ```ini
     API_KEY=your_api_key_here
     ```
