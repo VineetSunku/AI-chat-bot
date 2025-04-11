@@ -8,8 +8,18 @@ import { products, orders, storePolicies } from "./sampleData.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CLIENT_URL || 'https://localhost:3000',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
+// const path = require('path');
+// app.use(express.static(path.join(__dirname, 'frontend/build')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+// });
 
 // --- Gemini API Integration ---
 // Initialize the Google Generative AI client using your API key.

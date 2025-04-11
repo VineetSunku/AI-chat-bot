@@ -1,7 +1,6 @@
 // frontend/src/Chat.js
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-
 import ReactMarkdown from 'react-markdown';
 
 const Chat = () => {
@@ -9,6 +8,7 @@ const Chat = () => {
   const [history, setHistory] = useState([{sender: 'bot', text: 'Hello! How may I assist you today?'}]);
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef(null);
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -19,7 +19,7 @@ const Chat = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chat', { query: currentInput });
+      const res = await axios.post(apiUrl, { query: currentInput });
       const botMessage = { sender: 'bot', text: res.data.response };
       setHistory(prev => [...prev, botMessage]);
     } catch (error) {
