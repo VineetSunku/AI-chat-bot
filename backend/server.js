@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 const corsOptions = {
-  origin: process.env.CLIENT_URL || 'https://localhost:3000',
+  origin: process.env.CLIENT_URL || 'https://ai-chat-bot-9gtm.onrender.com',
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));

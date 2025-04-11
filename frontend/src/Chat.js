@@ -8,7 +8,7 @@ const Chat = () => {
   const [history, setHistory] = useState([{sender: 'bot', text: 'Hello! How may I assist you today?'}]);
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef(null);
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const apiUrl = process.env.REACT_APP_API_URL || 'https://ai-chat-9mq0.onrender.com';
 
   const sendMessage = async () => {
     if (!input.trim()) return;
