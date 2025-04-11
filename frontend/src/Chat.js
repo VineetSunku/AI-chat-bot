@@ -19,7 +19,7 @@ const Chat = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(apiUrl, { query: currentInput });
+      const res = await axios.post(`${apiUrl}/api/chat`, { query: currentInput });
       const botMessage = { sender: 'bot', text: res.data.response };
       setHistory(prev => [...prev, botMessage]);
     } catch (error) {
